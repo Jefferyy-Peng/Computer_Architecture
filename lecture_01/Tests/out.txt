@@ -1,0 +1,11 @@
+n =      1 : instructions =      8, cycles =    606 :PASS
+n =      2 : instructions =      9, cycles =    607 :PASS
+n =      4 : instructions =     16, cycles =   1212 :PASS
+n =      8 : instructions =     30, cycles =   2422 :PASS
+n =     16 : instructions =     58, cycles =   4842 :PASS
+n =     32 : instructions =    114, cycles =   9682 :PASS
+n =     64 : instructions =    226, cycles =  19362 :PASS
+n =    128 : instructions =    450, cycles =  38722 :PASS
+n =    256 : instructions =    898, cycles =  77442 :PASS
+n =    512 : instructions =   1794, cycles = 154882 :PASS
+n =   1024 : instructions =   3586, cycles = 309762 :PASS

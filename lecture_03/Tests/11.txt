@@ -1,0 +1,658 @@
+g++ -I../Include ../Src/simple.cc mxv.cc ../Src/mxv.cc -o mxv
+mxv.cc:59:9: warning: format specifies type 'unsigned long' but the argument has type 'uint64_t' (aka 'unsigned long long') [-Wformat]
+                M, N, simple::instructions, simple::cycles, flops, max_flops, cri_m, cri_n, opt_m, opt_n, simple::caches::L1.accesses, simple::caches::L1.misses, simple::caches::L2.accesses, simple::caches::L2.misses, simple::caches::L3.accesses, simple::caches::L3.misses);
+                      ^~~~~~~~~~~~~~~~~~~~
+mxv.cc:59:31: warning: format specifies type 'unsigned long' but the argument has type 'uint64_t' (aka 'unsigned long long') [-Wformat]
+                M, N, simple::instructions, simple::cycles, flops, max_flops, cri_m, cri_n, opt_m, opt_n, simple::caches::L1.accesses, simple::caches::L1.misses, simple::caches::L2.accesses, simple::caches::L2.misses, simple::caches::L3.accesses, simple::caches::L3.misses);
+                                            ^~~~~~~~~~~~~~
+mxv.cc:59:93: warning: format specifies type 'unsigned long' but the argument has type 'uint64_t' (aka 'unsigned long long') [-Wformat]
+                M, N, simple::instructions, simple::cycles, flops, max_flops, cri_m, cri_n, opt_m, opt_n, simple::caches::L1.accesses, simple::caches::L1.misses, simple::caches::L2.accesses, simple::caches::L2.misses, simple::caches::L3.accesses, simple::caches::L3.misses);
+                                                                                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+mxv.cc:59:122: warning: format specifies type 'unsigned long' but the argument has type 'uint64_t' (aka 'unsigned long long') [-Wformat]
+                M, N, simple::instructions, simple::cycles, flops, max_flops, cri_m, cri_n, opt_m, opt_n, simple::caches::L1.accesses, simple::caches::L1.misses, simple::caches::L2.accesses, simple::caches::L2.misses, simple::caches::L3.accesses, simple::caches::L3.misses);
+                                                                                                                                       ^~~~~~~~~~~~~~~~~~~~~~~~~
+mxv.cc:59:149: warning: format specifies type 'unsigned long' but the argument has type 'uint64_t' (aka 'unsigned long long') [-Wformat]
+                M, N, simple::instructions, simple::cycles, flops, max_flops, cri_m, cri_n, opt_m, opt_n, simple::caches::L1.accesses, simple::caches::L1.misses, simple::caches::L2.accesses, simple::caches::L2.misses, simple::caches::L3.accesses, simple::caches::L3.misses);
+                                                                                                                                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+mxv.cc:59:178: warning: format specifies type 'unsigned long' but the argument has type 'uint64_t' (aka 'unsigned long long') [-Wformat]
+                M, N, simple::instructions, simple::cycles, flops, max_flops, cri_m, cri_n, opt_m, opt_n, simple::caches::L1.accesses, simple::caches::L1.misses, simple::caches::L2.accesses, simple::caches::L2.misses, simple::caches::L3.accesses, simple::caches::L3.misses);
+                                                                                                                                                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~
+mxv.cc:59:205: warning: format specifies type 'unsigned long' but the argument has type 'uint64_t' (aka 'unsigned long long') [-Wformat]
+                M, N, simple::instructions, simple::cycles, flops, max_flops, cri_m, cri_n, opt_m, opt_n, simple::caches::L1.accesses, simple::caches::L1.misses, simple::caches::L2.accesses, simple::caches::L2.misses, simple::caches::L3.accesses, simple::caches::L3.misses);
+                                                                                                                                                                                                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+mxv.cc:59:234: warning: format specifies type 'unsigned long' but the argument has type 'uint64_t' (aka 'unsigned long long') [-Wformat]
+                M, N, simple::instructions, simple::cycles, flops, max_flops, cri_m, cri_n, opt_m, opt_n, simple::caches::L1.accesses, simple::caches::L1.misses, simple::caches::L2.accesses, simple::caches::L2.misses, simple::caches::L3.accesses, simple::caches::L3.misses);
+                                                                                                                                                                                                                                                       ^~~~~~~~~~~~~~~~~~~~~~~~~
+8 warnings generated.
+./mxv
+L1: 2048 bytes of capacity, 64 sets, 4-way set associative, 8-byte line size
+M =      2, N =      1 : instructions =     44, cycles =      958, flops/cyc =   0.004175, max_flops =   0.004175, critical_m = 2, critical_n = 1, optimal_m = 2, optimal_n = 1
+ L1 accesses=      6, L1 misses =      5, L2 accesses=      5, L2 misses =      5, L3 accesses=      5, L3 misses =      5 :
+PASS
+M =      2, N =      3 : instructions =     84, cycles =     1946, flops/cyc =   0.006166, max_flops =   0.006166, critical_m = 2, critical_n = 3, optimal_m = 2, optimal_n = 3
+ L1 accesses=     14, L1 misses =     11, L2 accesses=     11, L2 misses =     11, L3 accesses=     16, L3 misses =     11 :
+PASS
+M =      2, N =      5 : instructions =    124, cycles =     2934, flops/cyc =   0.006817, max_flops =   0.006817, critical_m = 2, critical_n = 5, optimal_m = 2, optimal_n = 5
+ L1 accesses=     22, L1 misses =     17, L2 accesses=     17, L2 misses =     17, L3 accesses=     33, L3 misses =     20 :
+PASS
+M =      2, N =      7 : instructions =    164, cycles =     3922, flops/cyc =   0.007139, max_flops =   0.007139, critical_m = 2, critical_n = 7, optimal_m = 2, optimal_n = 7
+ L1 accesses=     30, L1 misses =     23, L2 accesses=     23, L2 misses =     23, L3 accesses=     56, L3 misses =     32 :
+PASS
+M =      2, N =      9 : instructions =    204, cycles =     4910, flops/cyc =   0.007332, max_flops =   0.007332, critical_m = 2, critical_n = 9, optimal_m = 2, optimal_n = 9
+ L1 accesses=     38, L1 misses =     29, L2 accesses=     29, L2 misses =     29, L3 accesses=     85, L3 misses =     47 :
+PASS
+M =      2, N =     11 : instructions =    244, cycles =     5898, flops/cyc =   0.007460, max_flops =   0.007460, critical_m = 2, critical_n = 11, optimal_m = 2, optimal_n = 11
+ L1 accesses=     46, L1 misses =     35, L2 accesses=     35, L2 misses =     35, L3 accesses=    120, L3 misses =     65 :
+PASS
+M =      4, N =      3 : instructions =    166, cycles =     2434, flops/cyc =   0.009860, max_flops =   0.009860, critical_m = 4, critical_n = 3, optimal_m = 4, optimal_n = 3
+ L1 accesses=     28, L1 misses =     19, L2 accesses=     19, L2 misses =     19, L3 accesses=    139, L3 misses =     74 :
+PASS
+M =      4, N =      5 : instructions =    246, cycles =     4670, flops/cyc =   0.008565, max_flops =   0.009860, critical_m = 4, critical_n = 3, optimal_m = 4, optimal_n = 5
+ L1 accesses=     44, L1 misses =     29, L2 accesses=     29, L2 misses =     29, L3 accesses=    168, L3 misses =     88 :
+PASS
+M =      4, N =      7 : instructions =    326, cycles =     5202, flops/cyc =   0.010765, max_flops =   0.010765, critical_m = 4, critical_n = 7, optimal_m = 4, optimal_n = 7
+ L1 accesses=     60, L1 misses =     39, L2 accesses=     39, L2 misses =     39, L3 accesses=    207, L3 misses =    103 :
+PASS
+M =      4, N =      9 : instructions =    406, cycles =     9710, flops/cyc =   0.007415, max_flops =   0.010765, critical_m = 4, critical_n = 7, optimal_m = 4, optimal_n = 9
+ L1 accesses=     76, L1 misses =     49, L2 accesses=     49, L2 misses =     49, L3 accesses=    256, L3 misses =    133 :
+PASS
+M =      4, N =     11 : instructions =    486, cycles =     8538, flops/cyc =   0.010307, max_flops =   0.010765, critical_m = 4, critical_n = 7, optimal_m = 4, optimal_n = 11
+ L1 accesses=     92, L1 misses =     59, L2 accesses=     59, L2 misses =     59, L3 accesses=    315, L3 misses =    158 :
+PASS
+M =      4, N =     13 : instructions =    566, cycles =    13046, flops/cyc =   0.007972, max_flops =   0.010765, critical_m = 4, critical_n = 7, optimal_m = 4, optimal_n = 13
+ L1 accesses=    108, L1 misses =     69, L2 accesses=     69, L2 misses =     69, L3 accesses=    384, L3 misses =    198 :
+PASS
+M =      6, N =      5 : instructions =    368, cycles =     4986, flops/cyc =   0.012034, max_flops =   0.012034, critical_m = 6, critical_n = 5, optimal_m = 6, optimal_n = 5
+ L1 accesses=     66, L1 misses =     41, L2 accesses=     41, L2 misses =     41, L3 accesses=    425, L3 misses =    213 :
+PASS
+M =      6, N =      7 : instructions =    488, cycles =     9038, flops/cyc =   0.009294, max_flops =   0.012034, critical_m = 6, critical_n = 5, optimal_m = 6, optimal_n = 7
+ L1 accesses=     90, L1 misses =     55, L2 accesses=     55, L2 misses =     55, L3 accesses=    480, L3 misses =    240 :
+PASS
+M =      6, N =      9 : instructions =    608, cycles =     9114, flops/cyc =   0.011850, max_flops =   0.012034, critical_m = 6, critical_n = 5, optimal_m = 6, optimal_n = 9
+ L1 accesses=    114, L1 misses =     69, L2 accesses=     69, L2 misses =     69, L3 accesses=    549, L3 misses =    266 :
+PASS
+M =      6, N =     11 : instructions =    728, cycles =    16574, flops/cyc =   0.007964, max_flops =   0.012034, critical_m = 6, critical_n = 5, optimal_m = 6, optimal_n = 11
+ L1 accesses=    138, L1 misses =     83, L2 accesses=     83, L2 misses =     83, L3 accesses=    632, L3 misses =    317 :
+PASS
+M =      6, N =     13 : instructions =    848, cycles =    13810, flops/cyc =   0.011296, max_flops =   0.012034, critical_m = 6, critical_n = 5, optimal_m = 6, optimal_n = 13
+ L1 accesses=    162, L1 misses =     97, L2 accesses=     97, L2 misses =     97, L3 accesses=    729, L3 misses =    357 :
+PASS
+M =      6, N =     15 : instructions =    968, cycles =    21270, flops/cyc =   0.008463, max_flops =   0.012034, critical_m = 6, critical_n = 5, optimal_m = 6, optimal_n = 15
+ L1 accesses=    186, L1 misses =    111, L2 accesses=    111, L2 misses =    111, L3 accesses=    840, L3 misses =    422 :
+PASS
+M =      8, N =      7 : instructions =    650, cycles =     9182, flops/cyc =   0.012198, max_flops =   0.012198, critical_m = 8, critical_n = 7, optimal_m = 8, optimal_n = 7
+ L1 accesses=    120, L1 misses =     71, L2 accesses=     71, L2 misses =     71, L3 accesses=    911, L3 misses =    448 :
+PASS
+M =      8, N =      9 : instructions =    810, cycles =    14482, flops/cyc =   0.009943, max_flops =   0.012198, critical_m = 8, critical_n = 7, optimal_m = 8, optimal_n = 9
+ L1 accesses=    152, L1 misses =     89, L2 accesses=     89, L2 misses =     89, L3 accesses=   1000, L3 misses =    491 :
+PASS
+M =      8, N =     11 : instructions =    970, cycles =    15806, flops/cyc =   0.011135, max_flops =   0.012198, critical_m = 8, critical_n = 7, optimal_m = 8, optimal_n = 11
+ L1 accesses=    184, L1 misses =    107, L2 accesses=    107, L2 misses =    107, L3 accesses=   1107, L3 misses =    537 :
+PASS
+M =      8, N =     13 : instructions =   1130, cycles =    22242, flops/cyc =   0.009352, max_flops =   0.012198, critical_m = 8, critical_n = 7, optimal_m = 8, optimal_n = 13
+ L1 accesses=    216, L1 misses =    125, L2 accesses=    125, L2 misses =    125, L3 accesses=   1232, L3 misses =    604 :
+PASS
+M =      8, N =     15 : instructions =   1290, cycles =    22998, flops/cyc =   0.010436, max_flops =   0.012198, critical_m = 8, critical_n = 7, optimal_m = 8, optimal_n = 15
+ L1 accesses=    248, L1 misses =    143, L2 accesses=    143, L2 misses =    143, L3 accesses=   1375, L3 misses =    672 :
+PASS
+M =      8, N =     17 : instructions =   1450, cycles =    28298, flops/cyc =   0.009612, max_flops =   0.012198, critical_m = 8, critical_n = 7, optimal_m = 8, optimal_n = 17
+ L1 accesses=    280, L1 misses =    161, L2 accesses=    161, L2 misses =    161, L3 accesses=   1536, L3 misses =    757 :
+PASS
+M =     10, N =      9 : instructions =   1012, cycles =    16442, flops/cyc =   0.010948, max_flops =   0.012198, critical_m = 8, critical_n = 7, optimal_m = 10, optimal_n = 9
+ L1 accesses=    190, L1 misses =    109, L2 accesses=    109, L2 misses =    109, L3 accesses=   1645, L3 misses =    805 :
+PASS
+M =     10, N =     11 : instructions =   1212, cycles =    20150, flops/cyc =   0.010918, max_flops =   0.012198, critical_m = 8, critical_n = 7, optimal_m = 10, optimal_n = 11
+ L1 accesses=    230, L1 misses =    131, L2 accesses=    131, L2 misses =    131, L3 accesses=   1776, L3 misses =    864 :
+PASS
+M =     10, N =     13 : instructions =   1412, cycles =    24994, flops/cyc =   0.010402, max_flops =   0.012198, critical_m = 8, critical_n = 7, optimal_m = 10, optimal_n = 13
+ L1 accesses=    270, L1 misses =    153, L2 accesses=    153, L2 misses =    153, L3 accesses=   1929, L3 misses =    938 :
+PASS
+M =     10, N =     15 : instructions =   1612, cycles =    28134, flops/cyc =   0.010663, max_flops =   0.012198, critical_m = 8, critical_n = 7, optimal_m = 10, optimal_n = 15
+ L1 accesses=    310, L1 misses =    175, L2 accesses=    175, L2 misses =    175, L3 accesses=   2104, L3 misses =   1021 :
+PASS
+M =     10, N =     17 : instructions =   1812, cycles =    34682, flops/cyc =   0.009803, max_flops =   0.012198, critical_m = 8, critical_n = 7, optimal_m = 10, optimal_n = 17
+ L1 accesses=    350, L1 misses =    197, L2 accesses=    197, L2 misses =    197, L3 accesses=   2301, L3 misses =   1125 :
+PASS
+M =     10, N =     19 : instructions =   2012, cycles =    35550, flops/cyc =   0.010689, max_flops =   0.012198, critical_m = 8, critical_n = 7, optimal_m = 10, optimal_n = 19
+ L1 accesses=    390, L1 misses =    219, L2 accesses=    219, L2 misses =    219, L3 accesses=   2520, L3 misses =   1230 :
+PASS
+M =     12, N =     11 : instructions =   1454, cycles =    25346, flops/cyc =   0.010416, max_flops =   0.012198, critical_m = 8, critical_n = 7, optimal_m = 12, optimal_n = 11
+ L1 accesses=    276, L1 misses =    155, L2 accesses=    155, L2 misses =    155, L3 accesses=   2675, L3 misses =   1306 :
+PASS
+M =     12, N =     13 : instructions =   1694, cycles =    27462, flops/cyc =   0.011361, max_flops =   0.012198, critical_m = 8, critical_n = 7, optimal_m = 12, optimal_n = 13
+ L1 accesses=    324, L1 misses =    181, L2 accesses=    181, L2 misses =    181, L3 accesses=   2856, L3 misses =   1386 :
+PASS
+M =     12, N =     15 : instructions =   1934, cycles =    35258, flops/cyc =   0.010210, max_flops =   0.012198, critical_m = 8, critical_n = 7, optimal_m = 12, optimal_n = 15
+ L1 accesses=    372, L1 misses =    207, L2 accesses=    207, L2 misses =    207, L3 accesses=   3063, L3 misses =   1491 :
+PASS
+M =     12, N =     17 : instructions =   2174, cycles =    35670, flops/cyc =   0.011438, max_flops =   0.012198, critical_m = 8, critical_n = 7, optimal_m = 12, optimal_n = 17
+ L1 accesses=    420, L1 misses =    233, L2 accesses=    233, L2 misses =    233, L3 accesses=   3296, L3 misses =   1595 :
+PASS
+M =     12, N =     19 : instructions =   2414, cycles =    47442, flops/cyc =   0.009612, max_flops =   0.012198, critical_m = 8, critical_n = 7, optimal_m = 12, optimal_n = 19
+ L1 accesses=    468, L1 misses =    259, L2 accesses=    259, L2 misses =    259, L3 accesses=   3555, L3 misses =   1738 :
+PASS
+M =     12, N =     21 : instructions =   2654, cycles =    44446, flops/cyc =   0.011340, max_flops =   0.012198, critical_m = 8, critical_n = 7, optimal_m = 12, optimal_n = 21
+ L1 accesses=    516, L1 misses =    285, L2 accesses=    285, L2 misses =    285, L3 accesses=   3840, L3 misses =   1868 :
+PASS
+M =     14, N =     13 : instructions =   1976, cycles =    35326, flops/cyc =   0.010304, max_flops =   0.012198, critical_m = 8, critical_n = 7, optimal_m = 14, optimal_n = 13
+ L1 accesses=    378, L1 misses =    209, L2 accesses=    209, L2 misses =    209, L3 accesses=   4049, L3 misses =   1975 :
+PASS
+M =     14, N =     15 : instructions =   2256, cycles =    36418, flops/cyc =   0.011533, max_flops =   0.012198, critical_m = 8, critical_n = 7, optimal_m = 14, optimal_n = 15
+ L1 accesses=    434, L1 misses =    239, L2 accesses=    239, L2 misses =    239, L3 accesses=   4288, L3 misses =   2081 :
+PASS
+M =     14, N =     17 : instructions =   2536, cycles =    46598, flops/cyc =   0.010215, max_flops =   0.012198, critical_m = 8, critical_n = 7, optimal_m = 14, optimal_n = 17
+ L1 accesses=    490, L1 misses =    269, L2 accesses=    269, L2 misses =    269, L3 accesses=   4557, L3 misses =   2220 :
+PASS
+M =     14, N =     19 : instructions =   2816, cycles =    44850, flops/cyc =   0.011862, max_flops =   0.012198, critical_m = 8, critical_n = 7, optimal_m = 14, optimal_n = 19
+ L1 accesses=    546, L1 misses =    299, L2 accesses=    299, L2 misses =    299, L3 accesses=   4856, L3 misses =   2350 :
+PASS
+M =     14, N =     21 : instructions =   3096, cycles =    61278, flops/cyc =   0.009596, max_flops =   0.012198, critical_m = 8, critical_n = 7, optimal_m = 14, optimal_n = 21
+ L1 accesses=    602, L1 misses =    329, L2 accesses=    329, L2 misses =    329, L3 accesses=   5185, L3 misses =   2535 :
+PASS
+M =     14, N =     23 : instructions =   3376, cycles =    54986, flops/cyc =   0.011712, max_flops =   0.012198, critical_m = 8, critical_n = 7, optimal_m = 14, optimal_n = 23
+ L1 accesses=    658, L1 misses =    359, L2 accesses=    359, L2 misses =    359, L3 accesses=   5544, L3 misses =   2695 :
+PASS
+M =     16, N =     15 : instructions =   2578, cycles =    46666, flops/cyc =   0.010286, max_flops =   0.012198, critical_m = 8, critical_n = 7, optimal_m = 16, optimal_n = 15
+ L1 accesses=    496, L1 misses =    271, L2 accesses=    271, L2 misses =    271, L3 accesses=   5815, L3 misses =   2836 :
+PASS
+M =     16, N =     17 : instructions =   2898, cycles =    46734, flops/cyc =   0.011640, max_flops =   0.012198, critical_m = 8, critical_n = 7, optimal_m = 16, optimal_n = 17
+ L1 accesses=    560, L1 misses =    305, L2 accesses=    305, L2 misses =    305, L3 accesses=   6120, L3 misses =   2972 :
+PASS
+M =     16, N =     19 : instructions =   3218, cycles =    59298, flops/cyc =   0.010253, max_flops =   0.012198, critical_m = 8, critical_n = 7, optimal_m = 16, optimal_n = 19
+ L1 accesses=    624, L1 misses =    339, L2 accesses=    339, L2 misses =    339, L3 accesses=   6459, L3 misses =   3149 :
+PASS
+M =     16, N =     21 : instructions =   3538, cycles =    55390, flops/cyc =   0.012132, max_flops =   0.012198, critical_m = 8, critical_n = 7, optimal_m = 16, optimal_n = 21
+ L1 accesses=    688, L1 misses =    373, L2 accesses=    373, L2 misses =    373, L3 accesses=   6832, L3 misses =   3309 :
+PASS
+M =     16, N =     23 : instructions =   3858, cycles =    76474, flops/cyc =   0.009624, max_flops =   0.012198, critical_m = 8, critical_n = 7, optimal_m = 16, optimal_n = 23
+ L1 accesses=    752, L1 misses =    407, L2 accesses=    407, L2 misses =    407, L3 accesses=   7239, L3 misses =   3540 :
+PASS
+M =     16, N =     25 : instructions =   4178, cycles =    66886, flops/cyc =   0.011961, max_flops =   0.012198, critical_m = 8, critical_n = 7, optimal_m = 16, optimal_n = 25
+ L1 accesses=    816, L1 misses =    441, L2 accesses=    441, L2 misses =    441, L3 accesses=   7680, L3 misses =   3734 :
+PASS
+M =     18, N =     17 : instructions =   3260, cycles =    59650, flops/cyc =   0.010260, max_flops =   0.012198, critical_m = 8, critical_n = 7, optimal_m = 18, optimal_n = 17
+ L1 accesses=    630, L1 misses =    341, L2 accesses=    341, L2 misses =    341, L3 accesses=   8021, L3 misses =   3913 :
+PASS
+M =     18, N =     19 : instructions =   3620, cycles =    58126, flops/cyc =   0.011768, max_flops =   0.012198, critical_m = 8, critical_n = 7, optimal_m = 18, optimal_n = 19
+ L1 accesses=    702, L1 misses =    379, L2 accesses=    379, L2 misses =    379, L3 accesses=   8400, L3 misses =   4082 :
+PASS
+M =     18, N =     21 : instructions =   3980, cycles =    73642, flops/cyc =   0.010266, max_flops =   0.012198, critical_m = 8, critical_n = 7, optimal_m = 18, optimal_n = 21
+ L1 accesses=    774, L1 misses =    417, L2 accesses=    417, L2 misses =    417, L3 accesses=   8817, L3 misses =   4302 :
+PASS
+M =     18, N =     23 : instructions =   4340, cycles =    67006, flops/cyc =   0.012357, max_flops =   0.012357, critical_m = 18, critical_n = 23, optimal_m = 18, optimal_n = 23
+ L1 accesses=    846, L1 misses =    455, L2 accesses=    455, L2 misses =    455, L3 accesses=   9272, L3 misses =   4495 :
+PASS
+M =     18, N =     25 : instructions =   4700, cycles =    93314, flops/cyc =   0.009645, max_flops =   0.012357, critical_m = 18, critical_n = 23, optimal_m = 18, optimal_n = 25
+ L1 accesses=    918, L1 misses =    493, L2 accesses=    493, L2 misses =    493, L3 accesses=   9765, L3 misses =   4777 :
+PASS
+M =     18, N =     27 : instructions =   5060, cycles =    79862, flops/cyc =   0.012171, max_flops =   0.012357, critical_m = 18, critical_n = 23, optimal_m = 18, optimal_n = 27
+ L1 accesses=    990, L1 misses =    531, L2 accesses=    531, L2 misses =    531, L3 accesses=  10296, L3 misses =   5008 :
+PASS
+M =     20, N =     19 : instructions =   4022, cycles =    73994, flops/cyc =   0.010271, max_flops =   0.012357, critical_m = 18, critical_n = 23, optimal_m = 20, optimal_n = 19
+ L1 accesses=    780, L1 misses =    419, L2 accesses=    419, L2 misses =    419, L3 accesses=  10715, L3 misses =   5230 :
+PASS
+M =     20, N =     21 : instructions =   4422, cycles =    70878, flops/cyc =   0.011851, max_flops =   0.012357, critical_m = 18, critical_n = 23, optimal_m = 20, optimal_n = 21
+ L1 accesses=    860, L1 misses =    461, L2 accesses=    461, L2 misses =    461, L3 accesses=  11176, L3 misses =   5436 :
+PASS
+M =     20, N =     23 : instructions =   4822, cycles =    89346, flops/cyc =   0.010297, max_flops =   0.012357, critical_m = 18, critical_n = 23, optimal_m = 20, optimal_n = 23
+ L1 accesses=    940, L1 misses =    503, L2 accesses=    503, L2 misses =    503, L3 accesses=  11679, L3 misses =   5703 :
+PASS
+M =     20, N =     25 : instructions =   5222, cycles =    79982, flops/cyc =   0.012503, max_flops =   0.012503, critical_m = 20, critical_n = 25, optimal_m = 20, optimal_n = 25
+ L1 accesses=   1020, L1 misses =    545, L2 accesses=    545, L2 misses =    545, L3 accesses=  12224, L3 misses =   5933 :
+PASS
+M =     20, N =     27 : instructions =   5622, cycles =   111514, flops/cyc =   0.009685, max_flops =   0.012503, critical_m = 20, critical_n = 25, optimal_m = 20, optimal_n = 27
+ L1 accesses=   1100, L1 misses =    587, L2 accesses=    587, L2 misses =    587, L3 accesses=  12811, L3 misses =   6270 :
+PASS
+M =     20, N =     29 : instructions =   6022, cycles =    94198, flops/cyc =   0.012314, max_flops =   0.012503, critical_m = 20, critical_n = 25, optimal_m = 20, optimal_n = 29
+ L1 accesses=   1180, L1 misses =    629, L2 accesses=    629, L2 misses =    629, L3 accesses=  13440, L3 misses =   6542 :
+PASS
+M =     22, N =     21 : instructions =   4864, cycles =    89414, flops/cyc =   0.010334, max_flops =   0.012503, critical_m = 20, critical_n = 25, optimal_m = 22, optimal_n = 21
+ L1 accesses=    946, L1 misses =    505, L2 accesses=    505, L2 misses =    505, L3 accesses=  13945, L3 misses =   6811 :
+PASS
+M =     22, N =     23 : instructions =   5304, cycles =    85274, flops/cyc =   0.011868, max_flops =   0.012503, critical_m = 20, critical_n = 25, optimal_m = 22, optimal_n = 23
+ L1 accesses=   1034, L1 misses =    551, L2 accesses=    551, L2 misses =    551, L3 accesses=  14496, L3 misses =   7059 :
+PASS
+M =     22, N =     25 : instructions =   5744, cycles =   106126, flops/cyc =   0.010365, max_flops =   0.012503, critical_m = 20, critical_n = 25, optimal_m = 22, optimal_n = 25
+ L1 accesses=   1122, L1 misses =    597, L2 accesses=    597, L2 misses =    597, L3 accesses=  15093, L3 misses =   7376 :
+PASS
+M =     22, N =     27 : instructions =   6184, cycles =    94602, flops/cyc =   0.012558, max_flops =   0.012558, critical_m = 22, critical_n = 27, optimal_m = 22, optimal_n = 27
+ L1 accesses=   1210, L1 misses =    643, L2 accesses=    643, L2 misses =    643, L3 accesses=  15736, L3 misses =   7648 :
+PASS
+M =     22, N =     29 : instructions =   6624, cycles =   130790, flops/cyc =   0.009756, max_flops =   0.012558, critical_m = 22, critical_n = 27, optimal_m = 22, optimal_n = 29
+ L1 accesses=   1298, L1 misses =    689, L2 accesses=    689, L2 misses =    689, L3 accesses=  16425, L3 misses =   8043 :
+PASS
+M =     22, N =     31 : instructions =   7064, cycles =   110178, flops/cyc =   0.012380, max_flops =   0.012558, critical_m = 22, critical_n = 27, optimal_m = 22, optimal_n = 31
+ L1 accesses=   1386, L1 misses =    735, L2 accesses=    735, L2 misses =    735, L3 accesses=  17160, L3 misses =   8361 :
+PASS
+M =     24, N =     23 : instructions =   5786, cycles =   106478, flops/cyc =   0.010368, max_flops =   0.012558, critical_m = 22, critical_n = 27, optimal_m = 24, optimal_n = 23
+ L1 accesses=   1128, L1 misses =    599, L2 accesses=    599, L2 misses =    599, L3 accesses=  17759, L3 misses =   8680 :
+PASS
+M =     24, N =     25 : instructions =   6266, cycles =   100746, flops/cyc =   0.011911, max_flops =   0.012558, critical_m = 22, critical_n = 27, optimal_m = 24, optimal_n = 25
+ L1 accesses=   1224, L1 misses =    649, L2 accesses=    649, L2 misses =    649, L3 accesses=  18408, L3 misses =   8973 :
+PASS
+M =     24, N =     27 : instructions =   6746, cycles =   124550, flops/cyc =   0.010405, max_flops =   0.012558, critical_m = 22, critical_n = 27, optimal_m = 24, optimal_n = 27
+ L1 accesses=   1320, L1 misses =    699, L2 accesses=    699, L2 misses =    699, L3 accesses=  19107, L3 misses =   9345 :
+PASS
+M =     24, N =     29 : instructions =   7226, cycles =   110298, flops/cyc =   0.012620, max_flops =   0.012620, critical_m = 24, critical_n = 29, optimal_m = 24, optimal_n = 29
+ L1 accesses=   1416, L1 misses =    749, L2 accesses=    749, L2 misses =    749, L3 accesses=  19856, L3 misses =   9662 :
+PASS
+M =     24, N =     31 : instructions =   7706, cycles =   151710, flops/cyc =   0.009808, max_flops =   0.012620, critical_m = 24, critical_n = 29, optimal_m = 24, optimal_n = 31
+ L1 accesses=   1512, L1 misses =    799, L2 accesses=    799, L2 misses =    799, L3 accesses=  20655, L3 misses =  10120 :
+PASS
+M =     24, N =     33 : instructions =   8186, cycles =   127234, flops/cyc =   0.012450, max_flops =   0.012620, critical_m = 24, critical_n = 29, optimal_m = 24, optimal_n = 33
+ L1 accesses=   1608, L1 misses =    849, L2 accesses=    849, L2 misses =    849, L3 accesses=  21504, L3 misses =  10487 :
+PASS
+M =     26, N =     25 : instructions =   6788, cycles =   125186, flops/cyc =   0.010385, max_flops =   0.012620, critical_m = 24, critical_n = 29, optimal_m = 26, optimal_n = 25
+ L1 accesses=   1326, L1 misses =    701, L2 accesses=    701, L2 misses =    701, L3 accesses=  22205, L3 misses =  10861 :
+PASS
+M =     26, N =     27 : instructions =   7308, cycles =   117294, flops/cyc =   0.011970, max_flops =   0.012620, critical_m = 24, critical_n = 29, optimal_m = 26, optimal_n = 27
+ L1 accesses=   1430, L1 misses =    755, L2 accesses=    755, L2 misses =    755, L3 accesses=  22960, L3 misses =  11202 :
+PASS
+M =     26, N =     29 : instructions =   7828, cycles =   144618, flops/cyc =   0.010427, max_flops =   0.012620, critical_m = 24, critical_n = 29, optimal_m = 26, optimal_n = 29
+ L1 accesses=   1534, L1 misses =    809, L2 accesses=    809, L2 misses =    809, L3 accesses=  23769, L3 misses =  11634 :
+PASS
+M =     26, N =     31 : instructions =   8348, cycles =   127070, flops/cyc =   0.012686, max_flops =   0.012686, critical_m = 26, critical_n = 31, optimal_m = 26, optimal_n = 31
+ L1 accesses=   1638, L1 misses =    863, L2 accesses=    863, L2 misses =    863, L3 accesses=  24632, L3 misses =  11999 :
+PASS
+M =     26, N =     33 : instructions =   8868, cycles =   174274, flops/cyc =   0.009847, max_flops =   0.012686, critical_m = 26, critical_n = 31, optimal_m = 26, optimal_n = 33
+ L1 accesses=   1742, L1 misses =    917, L2 accesses=    917, L2 misses =    917, L3 accesses=  25549, L3 misses =  12525 :
+PASS
+M =     26, N =     35 : instructions =   9388, cycles =   145366, flops/cyc =   0.012520, max_flops =   0.012686, critical_m = 26, critical_n = 31, optimal_m = 26, optimal_n = 35
+ L1 accesses=   1846, L1 misses =    971, L2 accesses=    971, L2 misses =    971, L3 accesses=  26520, L3 misses =  12944 :
+PASS
+M =     28, N =     27 : instructions =   7870, cycles =   145254, flops/cyc =   0.010409, max_flops =   0.012686, critical_m = 26, critical_n = 31, optimal_m = 28, optimal_n = 27
+ L1 accesses=   1540, L1 misses =    811, L2 accesses=    811, L2 misses =    811, L3 accesses=  27331, L3 misses =  13378 :
+PASS
+M =     28, N =     29 : instructions =   8430, cycles =   135202, flops/cyc =   0.012012, max_flops =   0.012686, critical_m = 26, critical_n = 31, optimal_m = 28, optimal_n = 29
+ L1 accesses=   1652, L1 misses =    869, L2 accesses=    869, L2 misses =    869, L3 accesses=  28200, L3 misses =  13771 :
+PASS
+M =     28, N =     31 : instructions =   8990, cycles =   166046, flops/cyc =   0.010455, max_flops =   0.012686, critical_m = 26, critical_n = 31, optimal_m = 28, optimal_n = 31
+ L1 accesses=   1764, L1 misses =    927, L2 accesses=    927, L2 misses =    927, L3 accesses=  29127, L3 misses =  14267 :
+PASS
+M =     28, N =     33 : instructions =   9550, cycles =   145202, flops/cyc =   0.012727, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 28, optimal_n = 33
+ L1 accesses=   1876, L1 misses =    985, L2 accesses=    985, L2 misses =    985, L3 accesses=  30112, L3 misses =  14684 :
+PASS
+M =     28, N =     35 : instructions =  10110, cycles =   198198, flops/cyc =   0.009889, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 28, optimal_n = 35
+ L1 accesses=   1988, L1 misses =   1043, L2 accesses=   1043, L2 misses =   1043, L3 accesses=  31155, L3 misses =  15282 :
+PASS
+M =     28, N =     37 : instructions =  10670, cycles =   165442, flops/cyc =   0.012524, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 28, optimal_n = 37
+ L1 accesses=   2100, L1 misses =   1101, L2 accesses=   1101, L2 misses =   1101, L3 accesses=  32256, L3 misses =  15757 :
+PASS
+M =     30, N =     29 : instructions =   9032, cycles =   170658, flops/cyc =   0.010196, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 30, optimal_n = 29
+ L1 accesses=   1770, L1 misses =    929, L2 accesses=    929, L2 misses =    929, L3 accesses=  33185, L3 misses =  16272 :
+PASS
+M =     30, N =     31 : instructions =   9632, cycles =   154754, flops/cyc =   0.012019, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 30, optimal_n = 31
+ L1 accesses=   1890, L1 misses =    991, L2 accesses=    991, L2 misses =    991, L3 accesses=  34176, L3 misses =  16725 :
+PASS
+M =     30, N =     33 : instructions =  10232, cycles =   190538, flops/cyc =   0.010392, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 30, optimal_n = 33
+ L1 accesses=   2010, L1 misses =   1053, L2 accesses=   1053, L2 misses =   1053, L3 accesses=  35229, L3 misses =  17295 :
+PASS
+M =     30, N =     35 : instructions =  10832, cycles =   166698, flops/cyc =   0.012598, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 30, optimal_n = 35
+ L1 accesses=   2130, L1 misses =   1115, L2 accesses=   1115, L2 misses =   1115, L3 accesses=  36344, L3 misses =  17773 :
+PASS
+M =     30, N =     37 : instructions =  11432, cycles =   226070, flops/cyc =   0.009820, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 30, optimal_n = 37
+ L1 accesses=   2250, L1 misses =   1177, L2 accesses=   1177, L2 misses =   1177, L3 accesses=  37521, L3 misses =  18454 :
+PASS
+M =     30, N =     39 : instructions =  12032, cycles =   194270, flops/cyc =   0.012045, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 30, optimal_n = 39
+ L1 accesses=   2370, L1 misses =   1239, L2 accesses=   1239, L2 misses =   1239, L3 accesses=  38760, L3 misses =  19014 :
+PASS
+M =     32, N =     31 : instructions =  10274, cycles =   192594, flops/cyc =   0.010301, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 32, optimal_n = 31
+ L1 accesses=   2016, L1 misses =   1055, L2 accesses=   1055, L2 misses =   1055, L3 accesses=  39815, L3 misses =  19593 :
+PASS
+M =     32, N =     33 : instructions =  10914, cycles =   180518, flops/cyc =   0.011700, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 32, optimal_n = 33
+ L1 accesses=   2144, L1 misses =   1121, L2 accesses=   1121, L2 misses =   1121, L3 accesses=  40936, L3 misses =  20118 :
+PASS
+M =     32, N =     35 : instructions =  11554, cycles =   213866, flops/cyc =   0.010474, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 32, optimal_n = 35
+ L1 accesses=   2272, L1 misses =   1187, L2 accesses=   1187, L2 misses =   1187, L3 accesses=  42123, L3 misses =  20754 :
+PASS
+M =     32, N =     37 : instructions =  12194, cycles =   189570, flops/cyc =   0.012491, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 32, optimal_n = 37
+ L1 accesses=   2400, L1 misses =   1253, L2 accesses=   1253, L2 misses =   1253, L3 accesses=  43376, L3 misses =  21295 :
+PASS
+M =     32, N =     39 : instructions =  12834, cycles =   250466, flops/cyc =   0.009965, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 32, optimal_n = 39
+ L1 accesses=   2528, L1 misses =   1319, L2 accesses=   1319, L2 misses =   1319, L3 accesses=  44695, L3 misses =  22044 :
+PASS
+M =     32, N =     41 : instructions =  13474, cycles =   232418, flops/cyc =   0.011290, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 32, optimal_n = 41
+ L1 accesses=   2656, L1 misses =   1385, L2 accesses=   1385, L2 misses =   1385, L3 accesses=  46080, L3 misses =  22736 :
+PASS
+M =     34, N =     33 : instructions =  11596, cycles =   218202, flops/cyc =   0.010284, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 34, optimal_n = 33
+ L1 accesses=   2278, L1 misses =   1189, L2 accesses=   1189, L2 misses =   1189, L3 accesses=  47269, L3 misses =  23394 :
+PASS
+M =     34, N =     35 : instructions =  12276, cycles =   219286, flops/cyc =   0.010853, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 34, optimal_n = 35
+ L1 accesses=   2414, L1 misses =   1259, L2 accesses=   1259, L2 misses =   1259, L3 accesses=  48528, L3 misses =  24047 :
+PASS
+M =     34, N =     37 : instructions =  12956, cycles =   249346, flops/cyc =   0.010090, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 34, optimal_n = 37
+ L1 accesses=   2550, L1 misses =   1329, L2 accesses=   1329, L2 misses =   1329, L3 accesses=  49857, L3 misses =  24789 :
+PASS
+M =     34, N =     39 : instructions =  13636, cycles =   224870, flops/cyc =   0.011793, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 34, optimal_n = 39
+ L1 accesses=   2686, L1 misses =   1399, L2 accesses=   1399, L2 misses =   1399, L3 accesses=  51256, L3 misses =  25444 :
+PASS
+M =     34, N =     41 : instructions =  14316, cycles =   279922, flops/cyc =   0.009960, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 34, optimal_n = 41
+ L1 accesses=   2822, L1 misses =   1469, L2 accesses=   1469, L2 misses =   1469, L3 accesses=  52725, L3 misses =  26278 :
+PASS
+M =     34, N =     43 : instructions =  14996, cycles =   262262, flops/cyc =   0.011149, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 34, optimal_n = 43
+ L1 accesses=   2958, L1 misses =   1539, L2 accesses=   1539, L2 misses =   1539, L3 accesses=  54264, L3 misses =  27045 :
+PASS
+M =     36, N =     35 : instructions =  12998, cycles =   249414, flops/cyc =   0.010104, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 36, optimal_n = 35
+ L1 accesses=   2556, L1 misses =   1331, L2 accesses=   1331, L2 misses =   1331, L3 accesses=  55595, L3 misses =  27793 :
+PASS
+M =     36, N =     37 : instructions =  13718, cycles =   257150, flops/cyc =   0.010360, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 36, optimal_n = 37
+ L1 accesses=   2700, L1 misses =   1405, L2 accesses=   1405, L2 misses =   1405, L3 accesses=  57000, L3 misses =  28557 :
+PASS
+M =     36, N =     39 : instructions =  14438, cycles =   274542, flops/cyc =   0.010228, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 36, optimal_n = 39
+ L1 accesses=   2844, L1 misses =   1479, L2 accesses=   1479, L2 misses =   1479, L3 accesses=  58479, L3 misses =  29374 :
+PASS
+M =     36, N =     41 : instructions =  15158, cycles =   272046, flops/cyc =   0.010851, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 36, optimal_n = 41
+ L1 accesses=   2988, L1 misses =   1553, L2 accesses=   1553, L2 misses =   1553, L3 accesses=  60032, L3 misses =  30173 :
+PASS
+M =     36, N =     43 : instructions =  15878, cycles =   300506, flops/cyc =   0.010303, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 36, optimal_n = 43
+ L1 accesses=   3132, L1 misses =   1627, L2 accesses=   1627, L2 misses =   1627, L3 accesses=  61659, L3 misses =  31065 :
+PASS
+M =     36, N =     45 : instructions =  16598, cycles =   297442, flops/cyc =   0.010893, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 36, optimal_n = 45
+ L1 accesses=   3276, L1 misses =   1701, L2 accesses=   1701, L2 misses =   1701, L3 accesses=  63360, L3 misses =  31946 :
+PASS
+M =     38, N =     37 : instructions =  14480, cycles =   274326, flops/cyc =   0.010251, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 38, optimal_n = 37
+ L1 accesses=   2850, L1 misses =   1481, L2 accesses=   1481, L2 misses =   1481, L3 accesses=  64841, L3 misses =  32767 :
+PASS
+M =     38, N =     39 : instructions =  15240, cycles =   297794, flops/cyc =   0.009953, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 38, optimal_n = 39
+ L1 accesses=   3002, L1 misses =   1559, L2 accesses=   1559, L2 misses =   1559, L3 accesses=  66400, L3 misses =  33667 :
+PASS
+M =     38, N =     41 : instructions =  16000, cycles =   301942, flops/cyc =   0.010320, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 38, optimal_n = 41
+ L1 accesses=   3154, L1 misses =   1637, L2 accesses=   1637, L2 misses =   1637, L3 accesses=  68037, L3 misses =  34568 :
+PASS
+M =     38, N =     43 : instructions =  16760, cycles =   325118, flops/cyc =   0.010052, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 38, optimal_n = 43
+ L1 accesses=   3306, L1 misses =   1715, L2 accesses=   1715, L2 misses =   1715, L3 accesses=  69752, L3 misses =  35546 :
+PASS
+M =     38, N =     45 : instructions =  17520, cycles =   342046, flops/cyc =   0.009999, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 38, optimal_n = 45
+ L1 accesses=   3458, L1 misses =   1793, L2 accesses=   1793, L2 misses =   1793, L3 accesses=  71545, L3 misses =  36569 :
+PASS
+M =     38, N =     47 : instructions =  18280, cycles =   358690, flops/cyc =   0.009958, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 38, optimal_n = 47
+ L1 accesses=   3610, L1 misses =   1871, L2 accesses=   1871, L2 misses =   1871, L3 accesses=  73416, L3 misses =  37646 :
+PASS
+M =     40, N =     39 : instructions =  16042, cycles =   328714, flops/cyc =   0.009492, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 40, optimal_n = 39
+ L1 accesses=   3160, L1 misses =   1639, L2 accesses=   1639, L2 misses =   1639, L3 accesses=  75055, L3 misses =  38640 :
+PASS
+M =     40, N =     41 : instructions =  16842, cycles =   359954, flops/cyc =   0.009112, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 40, optimal_n = 41
+ L1 accesses=   3320, L1 misses =   1721, L2 accesses=   1721, L2 misses =   1721, L3 accesses=  76776, L3 misses =  39744 :
+PASS
+M =     40, N =     43 : instructions =  17642, cycles =   344334, flops/cyc =   0.009990, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 40, optimal_n = 43
+ L1 accesses=   3480, L1 misses =   1803, L2 accesses=   1803, L2 misses =   1803, L3 accesses=  78579, L3 misses =  40782 :
+PASS
+M =     40, N =     45 : instructions =  18442, cycles =   376710, flops/cyc =   0.009556, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 40, optimal_n = 45
+ L1 accesses=   3640, L1 misses =   1885, L2 accesses=   1885, L2 misses =   1885, L3 accesses=  80464, L3 misses =  41925 :
+PASS
+M =     40, N =     47 : instructions =  19242, cycles =   408518, flops/cyc =   0.009204, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 40, optimal_n = 47
+ L1 accesses=   3800, L1 misses =   1967, L2 accesses=   1967, L2 misses =   1967, L3 accesses=  82431, L3 misses =  43167 :
+PASS
+M =     40, N =     49 : instructions =  20042, cycles =   422718, flops/cyc =   0.009273, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 40, optimal_n = 49
+ L1 accesses=   3960, L1 misses =   2049, L2 accesses=   2049, L2 misses =   2049, L3 accesses=  84480, L3 misses =  44452 :
+PASS
+M =     42, N =     41 : instructions =  17684, cycles =   370822, flops/cyc =   0.009287, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 42, optimal_n = 41
+ L1 accesses=   3486, L1 misses =   1805, L2 accesses=   1805, L2 misses =   1805, L3 accesses=  86285, L3 misses =  45578 :
+PASS
+M =     42, N =     43 : instructions =  18524, cycles =   426314, flops/cyc =   0.008473, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 42, optimal_n = 43
+ L1 accesses=   3654, L1 misses =   1891, L2 accesses=   1891, L2 misses =   1891, L3 accesses=  88176, L3 misses =  46890 :
+PASS
+M =     42, N =     45 : instructions =  19364, cycles =   413646, flops/cyc =   0.009138, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 42, optimal_n = 45
+ L1 accesses=   3822, L1 misses =   1977, L2 accesses=   1977, L2 misses =   1977, L3 accesses=  90153, L3 misses =  48148 :
+PASS
+M =     42, N =     47 : instructions =  20204, cycles =   439034, flops/cyc =   0.008992, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 42, optimal_n = 47
+ L1 accesses=   3990, L1 misses =   2063, L2 accesses=   2063, L2 misses =   2063, L3 accesses=  92216, L3 misses =  49487 :
+PASS
+M =     42, N =     49 : instructions =  21044, cycles =   465842, flops/cyc =   0.008836, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 42, optimal_n = 49
+ L1 accesses=   4158, L1 misses =   2149, L2 accesses=   2149, L2 misses =   2149, L3 accesses=  94365, L3 misses =  50911 :
+PASS
+M =     42, N =     51 : instructions =  21884, cycles =   484982, flops/cyc =   0.008833, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 42, optimal_n = 51
+ L1 accesses=   4326, L1 misses =   2235, L2 accesses=   2235, L2 misses =   2235, L3 accesses=  96600, L3 misses =  52396 :
+PASS
+M =     44, N =     43 : instructions =  19406, cycles =   454902, flops/cyc =   0.008318, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 44, optimal_n = 43
+ L1 accesses=   3828, L1 misses =   1979, L2 accesses=   1979, L2 misses =   1979, L3 accesses=  98579, L3 misses =  53804 :
+PASS
+M =     44, N =     45 : instructions =  20286, cycles =   472734, flops/cyc =   0.008377, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 44, optimal_n = 45
+ L1 accesses=   4004, L1 misses =   2069, L2 accesses=   2069, L2 misses =   2069, L3 accesses= 100648, L3 misses =  55260 :
+PASS
+M =     44, N =     47 : instructions =  21166, cycles =   486590, flops/cyc =   0.008500, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 44, optimal_n = 47
+ L1 accesses=   4180, L1 misses =   2159, L2 accesses=   2159, L2 misses =   2159, L3 accesses= 102807, L3 misses =  56757 :
+PASS
+M =     44, N =     49 : instructions =  22046, cycles =   491358, flops/cyc =   0.008776, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 44, optimal_n = 49
+ L1 accesses=   4356, L1 misses =   2249, L2 accesses=   2249, L2 misses =   2249, L3 accesses= 105056, L3 misses =  58262 :
+PASS
+M =     44, N =     51 : instructions =  22926, cycles =   546394, flops/cyc =   0.008214, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 44, optimal_n = 51
+ L1 accesses=   4532, L1 misses =   2339, L2 accesses=   2339, L2 misses =   2339, L3 accesses= 107395, L3 misses =  59949 :
+PASS
+M =     44, N =     53 : instructions =  23806, cycles =   547186, flops/cyc =   0.008524, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 44, optimal_n = 53
+ L1 accesses=   4708, L1 misses =   2429, L2 accesses=   2429, L2 misses =   2429, L3 accesses= 109824, L3 misses =  61632 :
+PASS
+M =     46, N =     45 : instructions =  21208, cycles =   494050, flops/cyc =   0.008380, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 46, optimal_n = 45
+ L1 accesses=   4186, L1 misses =   2161, L2 accesses=   2161, L2 misses =   2161, L3 accesses= 111985, L3 misses =  63162 :
+PASS
+M =     46, N =     47 : instructions =  22128, cycles =   534146, flops/cyc =   0.008095, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 46, optimal_n = 47
+ L1 accesses=   4370, L1 misses =   2255, L2 accesses=   2255, L2 misses =   2255, L3 accesses= 114240, L3 misses =  64822 :
+PASS
+M =     46, N =     49 : instructions =  23048, cycles =   537606, flops/cyc =   0.008385, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 46, optimal_n = 49
+ L1 accesses=   4554, L1 misses =   2349, L2 accesses=   2349, L2 misses =   2349, L3 accesses= 116589, L3 misses =  66477 :
+PASS
+M =     46, N =     51 : instructions =  23968, cycles =   566910, flops/cyc =   0.008276, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 46, optimal_n = 51
+ L1 accesses=   4738, L1 misses =   2443, L2 accesses=   2443, L2 misses =   2443, L3 accesses= 119032, L3 misses =  68227 :
+PASS
+M =     46, N =     53 : instructions =  24888, cycles =   590534, flops/cyc =   0.008257, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 46, optimal_n = 53
+ L1 accesses=   4922, L1 misses =   2537, L2 accesses=   2537, L2 misses =   2537, L3 accesses= 121569, L3 misses =  70054 :
+PASS
+M =     46, N =     55 : instructions =  25808, cycles =   608470, flops/cyc =   0.008316, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 46, optimal_n = 55
+ L1 accesses=   5106, L1 misses =   2631, L2 accesses=   2631, L2 misses =   2631, L3 accesses= 124200, L3 misses =  71933 :
+PASS
+M =     48, N =     47 : instructions =  23090, cycles =   561254, flops/cyc =   0.008039, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 48, optimal_n = 47
+ L1 accesses=   4560, L1 misses =   2351, L2 accesses=   2351, L2 misses =   2351, L3 accesses= 126551, L3 misses =  73680 :
+PASS
+M =     48, N =     49 : instructions =  24050, cycles =   593794, flops/cyc =   0.007922, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 48, optimal_n = 49
+ L1 accesses=   4752, L1 misses =   2449, L2 accesses=   2449, L2 misses =   2449, L3 accesses= 129000, L3 misses =  75534 :
+PASS
+M =     48, N =     51 : instructions =  25010, cycles =   600774, flops/cyc =   0.008149, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 48, optimal_n = 51
+ L1 accesses=   4944, L1 misses =   2547, L2 accesses=   2547, L2 misses =   2547, L3 accesses= 131547, L3 misses =  77403 :
+PASS
+M =     48, N =     53 : instructions =  25970, cycles =   620818, flops/cyc =   0.008196, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 48, optimal_n = 53
+ L1 accesses=   5136, L1 misses =   2645, L2 accesses=   2645, L2 misses =   2645, L3 accesses= 134192, L3 misses =  79332 :
+PASS
+M =     48, N =     55 : instructions =  26930, cycles =   669822, flops/cyc =   0.007883, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 48, optimal_n = 55
+ L1 accesses=   5328, L1 misses =   2743, L2 accesses=   2743, L2 misses =   2743, L3 accesses= 136935, L3 misses =  81421 :
+PASS
+M =     48, N =     57 : instructions =  27890, cycles =   676802, flops/cyc =   0.008085, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 48, optimal_n = 57
+ L1 accesses=   5520, L1 misses =   2841, L2 accesses=   2841, L2 misses =   2841, L3 accesses= 139776, L3 misses =  83522 :
+PASS
+M =     50, N =     49 : instructions =  25052, cycles =   620446, flops/cyc =   0.007898, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 50, optimal_n = 49
+ L1 accesses=   4950, L1 misses =   2549, L2 accesses=   2549, L2 misses =   2549, L3 accesses= 142325, L3 misses =  85460 :
+PASS
+M =     50, N =     51 : instructions =  26052, cycles =   652530, flops/cyc =   0.007816, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 50, optimal_n = 51
+ L1 accesses=   5150, L1 misses =   2651, L2 accesses=   2651, L2 misses =   2651, L3 accesses= 144976, L3 misses =  87495 :
+PASS
+M =     50, N =     53 : instructions =  27052, cycles =   661042, flops/cyc =   0.008018, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 50, optimal_n = 53
+ L1 accesses=   5350, L1 misses =   2753, L2 accesses=   2753, L2 misses =   2753, L3 accesses= 147729, L3 misses =  89549 :
+PASS
+M =     50, N =     55 : instructions =  28052, cycles =   680622, flops/cyc =   0.008081, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 50, optimal_n = 55
+ L1 accesses=   5550, L1 misses =   2855, L2 accesses=   2855, L2 misses =   2855, L3 accesses= 150584, L3 misses =  91662 :
+PASS
+M =     50, N =     57 : instructions =  29052, cycles =   734290, flops/cyc =   0.007763, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 50, optimal_n = 57
+ L1 accesses=   5750, L1 misses =   2957, L2 accesses=   2957, L2 misses =   2957, L3 accesses= 153541, L3 misses =  93957 :
+PASS
+M =     50, N =     59 : instructions =  30052, cycles =   743370, flops/cyc =   0.007937, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 50, optimal_n = 59
+ L1 accesses=   5950, L1 misses =   3059, L2 accesses=   3059, L2 misses =   3059, L3 accesses= 156600, L3 misses =  96274 :
+PASS
+M =     52, N =     51 : instructions =  27094, cycles =   690938, flops/cyc =   0.007677, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 52, optimal_n = 51
+ L1 accesses=   5356, L1 misses =   2755, L2 accesses=   2755, L2 misses =   2755, L3 accesses= 159355, L3 misses =  98436 :
+PASS
+M =     52, N =     53 : instructions =  28134, cycles =   727394, flops/cyc =   0.007578, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 52, optimal_n = 53
+ L1 accesses=   5564, L1 misses =   2861, L2 accesses=   2861, L2 misses =   2861, L3 accesses= 162216, L3 misses = 100720 :
+PASS
+M =     52, N =     55 : instructions =  29174, cycles =   734030, flops/cyc =   0.007793, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 52, optimal_n = 55
+ L1 accesses=   5772, L1 misses =   2967, L2 accesses=   2967, L2 misses =   2967, L3 accesses= 165183, L3 misses = 103016 :
+PASS
+M =     52, N =     57 : instructions =  30214, cycles =   759402, flops/cyc =   0.007806, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 52, optimal_n = 57
+ L1 accesses=   5980, L1 misses =   3073, L2 accesses=   3073, L2 misses =   3073, L3 accesses= 168256, L3 misses = 105386 :
+PASS
+M =     52, N =     59 : instructions =  31254, cycles =   818294, flops/cyc =   0.007499, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 52, optimal_n = 59
+ L1 accesses=   6188, L1 misses =   3179, L2 accesses=   3179, L2 misses =   3179, L3 accesses= 171435, L3 misses = 107953 :
+PASS
+M =     52, N =     61 : instructions =  32294, cycles =   812142, flops/cyc =   0.007811, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 52, optimal_n = 61
+ L1 accesses=   6396, L1 misses =   3285, L2 accesses=   3285, L2 misses =   3285, L3 accesses= 174720, L3 misses = 110486 :
+PASS
+M =     54, N =     53 : instructions =  29216, cycles =   761654, flops/cyc =   0.007515, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 54, optimal_n = 53
+ L1 accesses=   5778, L1 misses =   2969, L2 accesses=   2969, L2 misses =   2969, L3 accesses= 177689, L3 misses = 112876 :
+PASS
+M =     54, N =     55 : instructions =  30296, cycles =   784874, flops/cyc =   0.007568, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 54, optimal_n = 55
+ L1 accesses=   5994, L1 misses =   3079, L2 accesses=   3079, L2 misses =   3079, L3 accesses= 180768, L3 misses = 115337 :
+PASS
+M =     54, N =     57 : instructions =  31376, cycles =   803542, flops/cyc =   0.007661, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 54, optimal_n = 57
+ L1 accesses=   6210, L1 misses =   3189, L2 accesses=   3189, L2 misses =   3189, L3 accesses= 183957, L3 misses = 117853 :
+PASS
+M =     54, N =     59 : instructions =  32456, cycles =   824490, flops/cyc =   0.007728, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 54, optimal_n = 59
+ L1 accesses=   6426, L1 misses =   3299, L2 accesses=   3299, L2 misses =   3299, L3 accesses= 187256, L3 misses = 120429 :
+PASS
+M =     54, N =     61 : instructions =  33536, cycles =   886610, flops/cyc =   0.007431, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 54, optimal_n = 61
+ L1 accesses=   6642, L1 misses =   3409, L2 accesses=   3409, L2 misses =   3409, L3 accesses= 190665, L3 misses = 123216 :
+PASS
+M =     54, N =     63 : instructions =  34616, cycles =   881146, flops/cyc =   0.007722, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 54, optimal_n = 63
+ L1 accesses=   6858, L1 misses =   3519, L2 accesses=   3519, L2 misses =   3519, L3 accesses= 194184, L3 misses = 125971 :
+PASS
+M =     56, N =     55 : instructions =  31418, cycles =   834298, flops/cyc =   0.007383, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 56, optimal_n = 55
+ L1 accesses=   6216, L1 misses =   3191, L2 accesses=   3191, L2 misses =   3191, L3 accesses= 197375, L3 misses = 128596 :
+PASS
+M =     56, N =     57 : instructions =  32538, cycles =   859894, flops/cyc =   0.007424, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 56, optimal_n = 57
+ L1 accesses=   6440, L1 misses =   3305, L2 accesses=   3305, L2 misses =   3305, L3 accesses= 200680, L3 misses = 131301 :
+PASS
+M =     56, N =     59 : instructions =  33658, cycles =   883226, flops/cyc =   0.007482, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 56, optimal_n = 59
+ L1 accesses=   6664, L1 misses =   3419, L2 accesses=   3419, L2 misses =   3419, L3 accesses= 204099, L3 misses = 134073 :
+PASS
+M =     56, N =     61 : instructions =  34778, cycles =   892634, flops/cyc =   0.007654, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 56, optimal_n = 61
+ L1 accesses=   6888, L1 misses =   3533, L2 accesses=   3533, L2 misses =   3533, L3 accesses= 207632, L3 misses = 136867 :
+PASS
+M =     56, N =     63 : instructions =  35898, cycles =   967654, flops/cyc =   0.007292, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 56, optimal_n = 63
+ L1 accesses=   7112, L1 misses =   3647, L2 accesses=   3647, L2 misses =   3647, L3 accesses= 211279, L3 misses = 139914 :
+PASS
+M =     56, N =     65 : instructions =  37018, cycles =   957466, flops/cyc =   0.007603, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 56, optimal_n = 65
+ L1 accesses=   7336, L1 misses =   3761, L2 accesses=   3761, L2 misses =   3761, L3 accesses= 215040, L3 misses = 142913 :
+PASS
+M =     58, N =     57 : instructions =  33700, cycles =   904602, flops/cyc =   0.007309, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 58, optimal_n = 57
+ L1 accesses=   6670, L1 misses =   3421, L2 accesses=   3421, L2 misses =   3421, L3 accesses= 218461, L3 misses = 145763 :
+PASS
+M =     58, N =     59 : instructions =  34860, cycles =   939406, flops/cyc =   0.007285, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 58, optimal_n = 59
+ L1 accesses=   6902, L1 misses =   3539, L2 accesses=   3539, L2 misses =   3539, L3 accesses= 222000, L3 misses = 148728 :
+PASS
+M =     58, N =     61 : instructions =  36020, cycles =   955174, flops/cyc =   0.007408, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 58, optimal_n = 61
+ L1 accesses=   7134, L1 misses =   3657, L2 accesses=   3657, L2 misses =   3657, L3 accesses= 225657, L3 misses = 151730 :
+PASS
+M =     58, N =     63 : instructions =  37180, cycles =   976630, flops/cyc =   0.007483, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 58, optimal_n = 63
+ L1 accesses=   7366, L1 misses =   3775, L2 accesses=   3775, L2 misses =   3775, L3 accesses= 229432, L3 misses = 154795 :
+PASS
+M =     58, N =     65 : instructions =  38340, cycles =  1043802, flops/cyc =   0.007224, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 58, optimal_n = 65
+ L1 accesses=   7598, L1 misses =   3893, L2 accesses=   3893, L2 misses =   3893, L3 accesses= 233325, L3 misses = 158087 :
+PASS
+M =     58, N =     67 : instructions =  39500, cycles =  1041118, flops/cyc =   0.007465, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 58, optimal_n = 67
+ L1 accesses=   7830, L1 misses =   4011, L2 accesses=   4011, L2 misses =   4011, L3 accesses= 237336, L3 misses = 161358 :
+PASS
+M =     60, N =     59 : instructions =  36062, cycles =   985646, flops/cyc =   0.007183, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 60, optimal_n = 59
+ L1 accesses=   7140, L1 misses =   3659, L2 accesses=   3659, L2 misses =   3659, L3 accesses= 240995, L3 misses = 164472 :
+PASS
+M =     60, N =     61 : instructions =  37262, cycles =  1001810, flops/cyc =   0.007307, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 60, optimal_n = 61
+ L1 accesses=   7380, L1 misses =   3781, L2 accesses=   3781, L2 misses =   3781, L3 accesses= 244776, L3 misses = 167632 :
+PASS
+M =     60, N =     63 : instructions =  38462, cycles =  1035022, flops/cyc =   0.007304, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 60, optimal_n = 63
+ L1 accesses=   7620, L1 misses =   3903, L2 accesses=   3903, L2 misses =   3903, L3 accesses= 248679, L3 misses = 170890 :
+PASS
+M =     60, N =     65 : instructions =  39662, cycles =  1046074, flops/cyc =   0.007456, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 60, optimal_n = 65
+ L1 accesses=   7860, L1 misses =   4025, L2 accesses=   4025, L2 misses =   4025, L3 accesses= 252704, L3 misses = 174174 :
+PASS
+M =     60, N =     67 : instructions =  40862, cycles =  1121886, flops/cyc =   0.007167, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 60, optimal_n = 67
+ L1 accesses=   8100, L1 misses =   4147, L2 accesses=   4147, L2 misses =   4147, L3 accesses= 256851, L3 misses = 177717 :
+PASS
+M =     60, N =     69 : instructions =  42062, cycles =  1115330, flops/cyc =   0.007424, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 60, optimal_n = 69
+ L1 accesses=   8340, L1 misses =   4269, L2 accesses=   4269, L2 misses =   4269, L3 accesses= 261120, L3 misses = 181222 :
+PASS
+M =     62, N =     61 : instructions =  38504, cycles =  1059806, flops/cyc =   0.007137, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 62, optimal_n = 61
+ L1 accesses=   7626, L1 misses =   3905, L2 accesses=   3905, L2 misses =   3905, L3 accesses= 265025, L3 misses = 184573 :
+PASS
+M =     62, N =     63 : instructions =  39744, cycles =  1086314, flops/cyc =   0.007191, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 62, optimal_n = 63
+ L1 accesses=   7874, L1 misses =   4031, L2 accesses=   4031, L2 misses =   4031, L3 accesses= 269056, L3 misses = 188006 :
+PASS
+M =     62, N =     65 : instructions =  40984, cycles =  1107986, flops/cyc =   0.007274, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 62, optimal_n = 65
+ L1 accesses=   8122, L1 misses =   4157, L2 accesses=   4157, L2 misses =   4157, L3 accesses= 273213, L3 misses = 191498 :
+PASS
+M =     62, N =     67 : instructions =  42224, cycles =  1134494, flops/cyc =   0.007323, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 62, optimal_n = 67
+ L1 accesses=   8370, L1 misses =   4283, L2 accesses=   4283, L2 misses =   4283, L3 accesses= 277496, L3 misses = 195070 :
+PASS
+M =     62, N =     69 : instructions =  43464, cycles =  1212966, flops/cyc =   0.007054, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 62, optimal_n = 69
+ L1 accesses=   8618, L1 misses =   4409, L2 accesses=   4409, L2 misses =   4409, L3 accesses= 281905, L3 misses = 198908 :
+PASS
+M =     62, N =     71 : instructions =  44704, cycles =  1208802, flops/cyc =   0.007283, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 62, optimal_n = 71
+ L1 accesses=   8866, L1 misses =   4535, L2 accesses=   4535, L2 misses =   4535, L3 accesses= 286440, L3 misses = 202719 :
+PASS
+M =     64, N =     63 : instructions =  41026, cycles =  1149250, flops/cyc =   0.007017, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 64, optimal_n = 63
+ L1 accesses=   8128, L1 misses =   4159, L2 accesses=   4159, L2 misses =   4159, L3 accesses= 290599, L3 misses = 206361 :
+PASS
+M =     64, N =     65 : instructions =  42306, cycles =  1153150, flops/cyc =   0.007215, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 64, optimal_n = 65
+ L1 accesses=   8384, L1 misses =   4289, L2 accesses=   4289, L2 misses =   4289, L3 accesses= 294888, L3 misses = 210005 :
+PASS
+M =     64, N =     67 : instructions =  43586, cycles =  1192258, flops/cyc =   0.007193, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 64, optimal_n = 67
+ L1 accesses=   8640, L1 misses =   4419, L2 accesses=   4419, L2 misses =   4419, L3 accesses= 299307, L3 misses = 213770 :
+PASS
+M =     64, N =     69 : instructions =  44866, cycles =  1207510, flops/cyc =   0.007314, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 64, optimal_n = 69
+ L1 accesses=   8896, L1 misses =   4549, L2 accesses=   4549, L2 misses =   4549, L3 accesses= 303856, L3 misses = 217573 :
+PASS
+M =     64, N =     71 : instructions =  46146, cycles =  1291498, flops/cyc =   0.007037, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 64, optimal_n = 71
+ L1 accesses=   9152, L1 misses =   4679, L2 accesses=   4679, L2 misses =   4679, L3 accesses= 308535, L3 misses = 221662 :
+PASS
+M =     64, N =     73 : instructions =  47426, cycles =  1287162, flops/cyc =   0.007259, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 64, optimal_n = 71
+ L1 accesses=   9408, L1 misses =   4811, L2 accesses=   4811, L2 misses =   4809, L3 accesses= 313344, L3 misses = 225719 :
+PASS
+M =     66, N =     65 : instructions =  43628, cycles =  1228410, flops/cyc =   0.006985, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 66, optimal_n = 65
+ L1 accesses=   8646, L1 misses =   4421, L2 accesses=   4421, L2 misses =   4421, L3 accesses= 317765, L3 misses = 229611 :
+PASS
+M =     66, N =     67 : instructions =  44948, cycles =  1239230, flops/cyc =   0.007137, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 66, optimal_n = 67
+ L1 accesses=   8910, L1 misses =   4555, L2 accesses=   4555, L2 misses =   4555, L3 accesses= 322320, L3 misses = 233531 :
+PASS
+M =     66, N =     69 : instructions =  46268, cycles =  1273622, flops/cyc =   0.007151, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 66, optimal_n = 69
+ L1 accesses=   9174, L1 misses =   4689, L2 accesses=   4689, L2 misses =   4689, L3 accesses= 327009, L3 misses = 237555 :
+PASS
+M =     66, N =     71 : instructions =  47588, cycles =  1300646, flops/cyc =   0.007206, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 66, optimal_n = 69
+ L1 accesses=   9438, L1 misses =   4825, L2 accesses=   4825, L2 misses =   4823, L3 accesses= 331832, L3 misses = 241658 :
+PASS
+M =     66, N =     73 : instructions =  48908, cycles =  1381898, flops/cyc =   0.006973, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 66, optimal_n = 69
+ L1 accesses=   9702, L1 misses =   4959, L2 accesses=   4959, L2 misses =   4957, L3 accesses= 336789, L3 misses = 246037 :
+PASS
+M =     66, N =     75 : instructions =  50228, cycles =  1382510, flops/cyc =   0.007161, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 66, optimal_n = 69
+ L1 accesses=   9966, L1 misses =   5095, L2 accesses=   5095, L2 misses =   5091, L3 accesses= 341880, L3 misses = 250402 :
+PASS
+M =     68, N =     67 : instructions =  46310, cycles =  1319430, flops/cyc =   0.006906, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 68, optimal_n = 67
+ L1 accesses=   9180, L1 misses =   4691, L2 accesses=   4691, L2 misses =   4691, L3 accesses= 346571, L3 misses = 254589 :
+PASS
+M =     68, N =     69 : instructions =  47670, cycles =  1322978, flops/cyc =   0.007093, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 68, optimal_n = 69
+ L1 accesses=   9452, L1 misses =   4829, L2 accesses=   4829, L2 misses =   4829, L3 accesses= 351400, L3 misses = 258780 :
+PASS
+M =     68, N =     71 : instructions =  49030, cycles =  1367438, flops/cyc =   0.007061, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 68, optimal_n = 69
+ L1 accesses=   9724, L1 misses =   4969, L2 accesses=   4969, L2 misses =   4967, L3 accesses= 356367, L3 misses = 263108 :
+PASS
+M =     68, N =     73 : instructions =  50390, cycles =  1379790, flops/cyc =   0.007195, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 68, optimal_n = 69
+ L1 accesses=   9996, L1 misses =   5107, L2 accesses=   5107, L2 misses =   5105, L3 accesses= 361472, L3 misses = 267462 :
+PASS
+M =     68, N =     75 : instructions =  51750, cycles =  1464862, flops/cyc =   0.006963, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 68, optimal_n = 69
+ L1 accesses=  10268, L1 misses =   5247, L2 accesses=   5247, L2 misses =   5243, L3 accesses= 366715, L3 misses = 272104 :
+PASS
+M =     68, N =     77 : instructions =  53110, cycles =  1463030, flops/cyc =   0.007158, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 68, optimal_n = 69
+ L1 accesses=  10540, L1 misses =   5385, L2 accesses=   5385, L2 misses =   5383, L3 accesses= 372098, L3 misses = 276725 :
+PASS
+M =     70, N =     69 : instructions =  49072, cycles =  1394770, flops/cyc =   0.006926, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 70, optimal_n = 69
+ L1 accesses=   9730, L1 misses =   4969, L2 accesses=   4969, L2 misses =   4969, L3 accesses= 377067, L3 misses = 281150 :
+PASS
+M =     70, N =     71 : instructions =  50472, cycles =  1419462, flops/cyc =   0.007003, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 70, optimal_n = 69
+ L1 accesses=  10010, L1 misses =   5113, L2 accesses=   5113, L2 misses =   5111, L3 accesses= 382178, L3 misses = 285648 :
+PASS
+M =     70, N =     73 : instructions =  51872, cycles =  1452966, flops/cyc =   0.007034, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 70, optimal_n = 69
+ L1 accesses=  10290, L1 misses =   5257, L2 accesses=   5257, L2 misses =   5255, L3 accesses= 387433, L3 misses = 290246 :
+PASS
+M =     70, N =     75 : instructions =  53272, cycles =  1484750, flops/cyc =   0.007072, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 70, optimal_n = 69
+ L1 accesses=  10570, L1 misses =   5399, L2 accesses=   5399, L2 misses =   5397, L3 accesses= 392830, L3 misses = 294941 :
+PASS
+M =     70, N =     77 : instructions =  54672, cycles =  1558298, flops/cyc =   0.006918, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 70, optimal_n = 69
+ L1 accesses=  10850, L1 misses =   5543, L2 accesses=   5543, L2 misses =   5541, L3 accesses= 398371, L3 misses = 299883 :
+PASS
+M =     70, N =     79 : instructions =  56072, cycles =  1565106, flops/cyc =   0.007067, max_flops =   0.012727, critical_m = 28, critical_n = 33, optimal_m = 70, optimal_n = 69
+ L1 accesses=  11130, L1 misses =   5687, L2 accesses=   5687, L2 misses =   5685, L3 accesses= 404056, L3 misses = 304834 :
+PASS
