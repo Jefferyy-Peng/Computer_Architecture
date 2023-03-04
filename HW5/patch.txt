@@ -1,0 +1,378 @@
+diff --git a/lecture_10/Include/ISA.hh b/lecture_10/Include/ISA.hh
+index f3247d1..9a7affe 100644
+--- a/lecture_10/Include/ISA.hh
++++ b/lecture_10/Include/ISA.hh
+@@ -17,9 +17,12 @@
+ 
+ // 2.2. Arithmetic instructions
+ #define addi(RT, RA, SI)	instructions::addi::execute(RT, RA, SI, __LINE__)
++#define add(RT, RA, RB)	instructions::add::execute(RT, RA, RB, __LINE__)
++#define sub(RT, RA, RB)	instructions::sub::execute(RT, RA, RB, __LINE__)
+ 
+ // 2.3. Compare instructions
+ #define cmpi(RA, SI)		instructions::cmpi::execute(RA, SI, __LINE__)
++#define cmp(RA, RB)		instructions::cmp::execute(RA, RB, __LINE__)
+ 
+ // 3. Floating-point Facility
+ 
+diff --git a/lecture_10/Include/pipelined.hh b/lecture_10/Include/pipelined.hh
+index 93e7615..123e953 100644
+--- a/lecture_10/Include/pipelined.hh
++++ b/lecture_10/Include/pipelined.hh
+@@ -11,6 +11,8 @@
+ #include<iomanip>
+ #include<string>
+ 
++#define VSIZE 32
++
+ namespace pipelined
+ {
+     typedef uint8_t	u8;
+@@ -226,12 +228,12 @@ namespace pipelined
+ 
+     union vector
+     {
+-	u8	byte[16];
+-	u16	half[8];
+-	u32	word[4];
+-	u64	dword[2];
+-	float	sp[4];
+-	double	dp[2];
++	u8	byte[VSIZE];
++	u16	half[VSIZE/2];
++	u32	word[VSIZE/4];
++	u64	dword[VSIZE/8];
++	float	sp[VSIZE/4];
++	double	dp[VSIZE/8];
+ 
+ 	vector&	operator=(int v) { for (u32 i=0; i<16; i++) byte[i] = v; return *this; }
+     };
+@@ -311,7 +313,7 @@ namespace pipelined
+         {
+             public:
+                 bool            valid;          // is entry valid?
+-		bool		modified;	// has entry been modified?
++				bool		modified;	// has entry been modified?
+                 uint32_t        addr;           // address of this entry
+                 uint64_t        touched;        // last time this entry was used
+ 		u64             ready;          // cycle data are ready after a miss
+@@ -322,7 +324,7 @@ namespace pipelined
+ 		void store	(u32 EA, double D);		// stores double-precision value D in address EA
+ 		void store	(u32 EA, u8	B);		// store byte B in address EA
+ 		void store	(u32 EA, const vector &V);	// store vector V in address EA
+-		void store	(u32 EA, const u8 (&V)[16]);	// store bytes of vector V in address EA
++		void store	(u32 EA, const u8 (&V)[VSIZE]);	// store bytes of vector V in address EA
+         };
+ 
+         typedef std::vector<entry>      set;
+@@ -493,6 +495,67 @@ namespace pipelined
+ 		u64 ready() { return max(GPR[_RA].ready()); }
+ 		std::string dasm() { std::string str = "addi (p" + std::to_string(_idx) + ", p" + std::to_string(GPR[_RA].idx()) + ", " + std::to_string(_SI) + ")"; return str; }
+ 	};
++	//add: modify ready,issue, _SI-> _RB, unit()
++
++	class add : public operation
++	{
++	    private:
++		gprnum	_RT;
++		gprnum 	_RA;
++		gprnum	_RB;
++		u32	_idx;
++	    public:
++		add(gprnum RT, gprnum RA, gprnum RB) { _RT = RT; _RA = RA, _RB = RB; }
++		units::unit& unit() { return units::FXU; }
++		u64 target(u64 cycle) 
++		{ 
++		    GPR[_RT].busy() = false;
++		    _idx = PRF::find_next();
++		    return max(cycle, PRF::R[_idx].used());
++		}
++		bool issue(u64 cycle)
++		{
++		    GPR[_RA].used(cycle);
++			GPR[_RB].used(cycle);
++		    u32 RES = GPR[_RA].data() + GPR[_RB].data(); 
++		    GPR[_RT].idx()   = _idx; 
++		    GPR[_RT].data()  = RES;
++		    GPR[_RT].ready() = cycle + latency(); 
++		    return false; 
++		}
++		u64 ready() { return max(GPR[_RA].ready(),GPR[_RB].ready()); }
++		std::string dasm() { std::string str = "add (p" + std::to_string(_idx) + ", p" + std::to_string(GPR[_RA].idx()) + ", " + std::to_string(GPR[_RB].idx()) + ")"; return str; }
++	};
++
++	class sub : public operation
++	{
++	    private:
++		gprnum	_RT;
++		gprnum 	_RA;
++		gprnum	_RB;
++		u32	_idx;
++	    public:
++		sub(gprnum RT, gprnum RA, gprnum RB) { _RT = RT; _RA = RA, _RB = RB; }
++		units::unit& unit() { return units::FXU; }
++		u64 target(u64 cycle) 
++		{ 
++		    GPR[_RT].busy() = false;
++		    _idx = PRF::find_next();
++		    return max(cycle, PRF::R[_idx].used());
++		}
++		bool issue(u64 cycle)
++		{
++		    GPR[_RA].used(cycle);
++			GPR[_RB].used(cycle);
++		    u32 RES = GPR[_RA].data() - GPR[_RB].data(); 
++		    GPR[_RT].idx()   = _idx; 
++		    GPR[_RT].data()  = RES;
++		    GPR[_RT].ready() = cycle + latency(); 
++		    return false; 
++		}
++		u64 ready() { return max(GPR[_RA].ready(),GPR[_RB].ready()); }
++		std::string dasm() { std::string str = "add (p" + std::to_string(_idx) + ", p" + std::to_string(GPR[_RA].idx()) + ", " + std::to_string(GPR[_RB].idx()) + ")"; return str; }
++	};
+ 
+ 	class cmpi : public operation
+ 	{
+@@ -517,6 +580,30 @@ namespace pipelined
+ 		std::string dasm() { std::string str = "cmpi (p" + std::to_string(GPR[_RA].idx()) + ", " + std::to_string(_SI) + ")"; return str; }
+ 	};
+ 
++	class cmp : public operation
++	{
++	    private:
++		gprnum	_RA;
++		gprnum	_RB;
++	    public:
++		cmp(gprnum RA, gprnum RB) { _RA = RA; _RB = RB; }
++		bool issue(u64 cycle) 
++		{
++		    GPR[_RA].used(cycle);
++			GPR[_RB].used(cycle);
++		    flags.LT = false; flags.GT = false; flags.EQ = false;
++		    if      (GPR[_RA].data() < GPR[_RB].data()) flags.LT = true;
++        	    else if (GPR[_RA].data() > GPR[_RB].data()) flags.GT = true;
++        	    else                            flags.EQ = true;
++		    flags.ready = cycle + latency();
++		    return false; 
++		}	
++		units::unit& unit() { return units::FXU; }
++		u64 target(u64 cycle) { return cycle; }
++		u64 ready() { return max(GPR[_RA].ready(),GPR[_RB].ready()); }
++		std::string dasm() { std::string str = "cmp (p" + std::to_string(GPR[_RA].idx()) + ", p" + std::to_string(_RB) + ")"; return str; }
++	};
++
+ 	u8*	load( u32 EA, u32 L);
+ 
+ 	class lbz : public operation
+@@ -684,9 +771,9 @@ namespace pipelined
+ 		{ 
+ 		    if(_latency) return _latency; 
+ 		    u32 EA = GPR[_RA].data(); 
+-		    if      (caches::L1D.contains(EA,16))	_latency = params:: L1::latency;
+-		    else if (caches:: L2.contains(EA,16))	_latency = params:: L2::latency;
+-		    else if (caches:: L3.contains(EA,16)) 	_latency = params:: L3::latency;
++		    if      (caches::L1D.contains(EA,VSIZE))	_latency = params:: L1::latency;
++		    else if (caches:: L2.contains(EA,VSIZE))	_latency = params:: L2::latency;
++		    else if (caches:: L3.contains(EA,VSIZE)) 	_latency = params:: L3::latency;
+ 		    else  					_latency = params::MEM::latency; 
+ 		    return _latency; 
+ 		}
+@@ -701,15 +788,15 @@ namespace pipelined
+ 		{
+ 		    GPR[_RA].used(cycle);
+ 		    u32 EA = GPR[_RA].data(); 			// compute effective address of load
+-		    u8* data = load(EA,16);			// fill the cache with the line, if not already there
++		    u8* data = load(EA,VSIZE);			// fill the cache with the line, if not already there
+ 		    VR[_VT].idx()   = _idx;
+-		    for (u32 i=0; i<16; i++) VR[_VT].data().byte[i] = *((u8*)data + i);
++		    for (u32 i=0; i<VSIZE; i++) VR[_VT].data().byte[i] = *((u8*)data + i);
+ 		    VR[_VT].ready() = cycle + latency(); 
+ 		    return false; 
+ 		}
+ 		u64 ready() { return max(GPR[_RA].ready()); }
+ 		std::string dasm() { std::string str = "vlb (q" + std::to_string(_idx) + ", p" + std::to_string(GPR[_RA].idx()) + ")"; return str; }
+-		u64 cacheready() { u32 EA = GPR[_RA].data(); u64 ready; return caches::L1D.contains(EA,16, ready) ? ready : 0; }
++		u64 cacheready() { u32 EA = GPR[_RA].data(); u64 ready; return caches::L1D.contains(EA,VSIZE, ready) ? ready : 0; }
+ 	};
+ 
+ 	class vstb : public operation
+@@ -724,18 +811,18 @@ namespace pipelined
+ 		{
+ 		    GPR[_RA].used(cycle);
+ 		    uint32_t EA = GPR[_RA].data();				// compute effective address of store
+-		    u8* data = load(EA,16);					// fill the cache with the line, if not already there
+-		    caches::L1D.find(EA,16)->store(EA,VR[_VS].data().byte);	// write data to L1 cache
+-		    caches::L2 .find(EA,16)->store(EA,VR[_VS].data().byte);	// write to L2 as well, since L1 is write-through!
++		    u8* data = load(EA,VSIZE);					// fill the cache with the line, if not already there
++		    caches::L1D.find(EA,VSIZE)->store(EA,VR[_VS].data().byte);	// write data to L1 cache
++		    caches::L2 .find(EA,VSIZE)->store(EA,VR[_VS].data().byte);	// write to L2 as well, since L1 is write-through!
+ 		    return false; 
+ 		}
+ 		u32 latency() 
+ 		{ 
+ 		    if(_latency) return _latency; 
+ 		    u32 EA = GPR[_RA].data(); 
+-		    if      (caches::L1D.contains(EA,16))	_latency = params:: L1::latency;
+-		    else if (caches:: L2.contains(EA,16))	_latency = params:: L2::latency;
+-		    else if (caches:: L3.contains(EA,16)) 	_latency = params:: L3::latency;
++		    if      (caches::L1D.contains(EA,VSIZE))	_latency = params:: L1::latency;
++		    else if (caches:: L2.contains(EA,VSIZE))	_latency = params:: L2::latency;
++		    else if (caches:: L3.contains(EA,VSIZE)) 	_latency = params:: L3::latency;
+ 		    else  					_latency = params::MEM::latency; 
+ 		    return _latency; 
+ 		}
+@@ -743,7 +830,7 @@ namespace pipelined
+ 		u64 target(u64 cycle) { return cycle; }
+ 		u64 ready() { return max(GPR[_RA].ready(), VR[_VS].ready()); }
+ 		std::string dasm() { std::string str = "vstb (q" + std::to_string(VR[_VS].idx()) + ", p" + std::to_string(GPR[_RA].idx()) + ")"; return str; }
+-		u64 cacheready() { u32 EA = GPR[_RA].data(); u64 ready; return caches::L1D.contains(EA,16, ready) ? ready : 0; }
++		u64 cacheready() { u32 EA = GPR[_RA].data(); u64 ready; return caches::L1D.contains(EA,VSIZE, ready) ? ready : 0; }
+ 	};
+ 
+ 	class b : public operation
+@@ -958,6 +1045,32 @@ namespace pipelined
+ 		std::string dasm() { std::string str = "addi (r" + std::to_string(_RT) + ", r" + std::to_string(_RA) + ", " + std::to_string(_SI) + ")"; return str; }
+ 	};
+ 
++	class add : public instruction
++	{
++	    private:
++		gprnum	_RT;
++		gprnum	_RA;
++		gprnum	_RB;
++	    public:
++		add(gprnum RT, gprnum RA, gprnum RB, u32 addr) : instruction(addr) { _RT = RT; _RA = RA; _RB = RB; }
++		bool process() { return operations::process(new operations::add(_RT, _RA, _RB), dispatched()); }
++		static bool execute(gprnum RT, gprnum RA, gprnum RB, u32 line) { return instructions::process(new add(RT, RA, RB, 4*line)); }
++		std::string dasm() { std::string str = "add (r" + std::to_string(_RT) + ", r" + std::to_string(_RA) + ", r" + std::to_string(_RB) + ")"; return str; }
++	};
++
++	class sub : public instruction
++	{
++	    private:
++		gprnum	_RT;
++		gprnum	_RA;
++		gprnum	_RB;
++	    public:
++		sub(gprnum RT, gprnum RA, gprnum RB, u32 addr) : instruction(addr) { _RT = RT; _RA = RA; _RB = RB; }
++		bool process() { return operations::process(new operations::sub(_RT, _RA, _RB), dispatched()); }
++		static bool execute(gprnum RT, gprnum RA, gprnum RB, u32 line) { return instructions::process(new sub(RT, RA, RB, 4*line)); }
++		std::string dasm() { std::string str = "sub (r" + std::to_string(_RT) + ", r" + std::to_string(_RA) + ", r" + std::to_string(_RB) + ")"; return str; }
++	};
++
+ 	class cmpi : public instruction
+ 	{
+ 	    private:
+@@ -970,6 +1083,18 @@ namespace pipelined
+ 		std::string dasm() { std::string str = "cmpi (r" + std::to_string(_RA) + ", " + std::to_string(_SI) + ")"; return str; }
+ 	};
+ 
++	class cmp : public instruction
++	{
++	    private:
++		gprnum	_RA;
++		gprnum	_RB;
++	    public:
++		cmp(gprnum RA, gprnum RB, u32 addr) : instruction(addr) { _RA = RA; _RB = RB; }
++		bool process() { return operations::process(new operations::cmp(_RA, _RB), dispatched()); }
++		static bool execute(gprnum RA, gprnum RB, u32 line) { return instructions::process(new cmp(RA, RB, 4*line)); }
++		std::string dasm() { std::string str = "cmp (r" + std::to_string(_RA) + ", r" + std::to_string(_RB) + ")"; return str; }
++	};
++
+ 	class lbz : public instruction
+ 	{
+ 	    private:
+@@ -1021,7 +1146,7 @@ namespace pipelined
+ 	class beq : public instruction
+ 	{
+ 	    private:
+-		i16		_BD;
++		i16 _BD;
+ 		const char*	_label;
+ 	    public:
+ 		beq(i16 BD, const char *label, u32 addr) : instruction(addr) { _BD = BD; _label = label; }
+diff --git a/lecture_10/Src/pipelined.cc b/lecture_10/Src/pipelined.cc
+index 067ed8c..7b78eb4 100644
+--- a/lecture_10/Src/pipelined.cc
++++ b/lecture_10/Src/pipelined.cc
+@@ -2,7 +2,7 @@
+ 
+ namespace pipelined
+ {
+-    bool	tracing = false;
++    bool	tracing = true;
+     bool	operations::operation::first = true;
+     bool	instructions::instruction::first = true;
+ 
+@@ -12,17 +12,17 @@ namespace pipelined
+     const u32 	params::L1::latency = 2;
+     const u32	params::L1::nsets = 16;
+     const u32 	params::L1::nways = 4;
+-    const u32	params::L1::linesize = 16;
++    const u32	params::L1::linesize = VSIZE;
+ 
+     const u32 	params::L2::latency = 4;
+     const u32	params::L2::nsets = 64;
+     const u32 	params::L2::nways = 4;
+-    const u32	params::L2::linesize = 16;
++    const u32	params::L2::linesize = VSIZE;
+ 
+     const u32 	params::L3::latency = 8;
+     const u32	params::L3::nsets = 64;
+     const u32 	params::L3::nways = 16;
+-    const u32	params::L3::linesize = 16;
++    const u32	params::L3::linesize = VSIZE;
+ 
+     const u32	params::GPR::N = 16;
+     const u32 	params::FPR::N = 8;
+@@ -514,13 +514,13 @@ namespace pipelined
+ 	modified = true;
+     }
+ 
+-    void pipelined::caches::entry::store(u32 EA, const u8 (&V)[16])
++    void pipelined::caches::entry::store(u32 EA, const u8 (&V)[VSIZE])
+     {
+ 	u32 offset = EA % data.size();
+ 	assert(offset == 0);
+ 	assert(sizeof(V) == data.size());
+ 	u8 *buff = (u8*)(data.data() + offset);
+-	for (u32 i=0; i<16; i++) *((u8*)buff + i) = V[i];
++	for (u32 i=0; i<VSIZE; i++) *((u8*)buff + i) = V[i];
+ 	modified = true;
+     }
+ 
+diff --git a/lecture_10/Src/vmemcpy.cc b/lecture_10/Src/vmemcpy.cc
+index 0b62088..b72db9d 100644
+--- a/lecture_10/Src/vmemcpy.cc
++++ b/lecture_10/Src/vmemcpy.cc
+@@ -12,13 +12,14 @@ namespace pipelined
+     )
+     {
+         addi(r7, r3, 0);        // preserve GPR[3] so that we can just return it
+-loop:	cmpi(r5,16);		// n == 16?
++loop:	cmp(r5,r8);		// n == 16?
++    // std::cout << "test1" << std::endl;
+ 	blt(remain);		// while(n >= 16)
+ 	vlb(v0, r4);		// load vector of bytes from *src
+ 	vstb(v0, r7);		// store vector of bytes to *dest
+-	addi(r4, r4, 16);	// src += 16
+-	addi(r7, r7, 16);	// dest += 16
+-	addi(r5, r5, -16);	// n -= 16
++	add(r4, r4, r8);	// src += 16
++	add(r7, r7, r8);	// dest += 16
++	sub(r5, r5, r8);	// n -= 16
+ 	b(loop);		// end while
+ remain: cmpi(r5, 0);            // n == 0?
+         beq(end);               // while(n != 0)
+diff --git a/lecture_10/Tests/vmemcpy.cc b/lecture_10/Tests/vmemcpy.cc
+index c411f6e..6beb3b3 100644
+--- a/lecture_10/Tests/vmemcpy.cc
++++ b/lecture_10/Tests/vmemcpy.cc
+@@ -28,6 +28,7 @@ int main
+ 	pipelined::GPR[3].data() = N;
+ 	pipelined::GPR[4].data() = 0;
+ 	pipelined::GPR[5].data() = n;
++	pipelined::GPR[8].data() = VSIZE;
+ 	
+ 	pipelined::vmemcpy(0,0,0);
+ 
